@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+
+{% block pageHeader %}{{ 'statisticsCustomHeader'|trans }}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="/static/css/datepicker.css">
+{% endblock %}
+
+{% form_theme form 'bootstrap.html.twig' %}
+
+{% block content %}
+    {{ form(form) }}
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/bootstrap-datepicker.js"></script>
+<script src="/static/js/accountant-datepicker.js"></script>
+<script>
+$(function($) {
+    $('#accountant_statistics_start').accountantDatePicker();
+    $('#accountant_statistics_end').accountantDatePicker();
+});
+</script>
+{% endblock %}

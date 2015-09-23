@@ -1,0 +1,9 @@
+{% extends 'layout.html.twig' %}
+
+{% block pageHeader %}{{ 'categoryAddHeader'|trans }}{% endblock %}
+
+{% form_theme form 'bootstrap.html.twig' %}
+
+{% block content %}
+    {{ form(form) }}
+{% endblock %}

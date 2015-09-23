@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+
+{% block pageHeader %}{{ 'paymentAddHeader'|trans }}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="/static/css/datepicker.css">
+{% endblock %}
+
+{% form_theme form 'bootstrap.html.twig' %}
+
+{% block content %}
+    {{ form(form) }}
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/bootstrap-datepicker.js"></script>
+<script src="/static/js/accountant-datepicker.js"></script>
+<script>
+$(function($) {
+    $('#accountant_payment_date').accountantDatePicker();
+});
+</script>
+{% endblock %}

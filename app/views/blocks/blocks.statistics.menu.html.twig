@@ -1,0 +1,24 @@
+{% import _self as menuTools %}
+
+{% if pageCode is not defined %}
+{% set pageCode = '' %}
+{% endif %}
+
+<ul class="nav nav-sidebar">
+    <li data-page-code="this-month" {{ menuTools.highlightActive(pageCode, 'this-month') }}><a href="{{ path('homepage') }}">{{ 'menuStatisticsThisMonth'|trans }}</a></li>
+    {{ menuTools.menu('menuStatisticsToday'|trans, pageCode, 'today', 'now', 'now') }}
+    {{ menuTools.menu('menuStatisticsYesterday'|trans, pageCode, 'yesterday', 'yesterday', 'yesterday') }}
+    {{ menuTools.menu('menuStatisticsThisWeek'|trans, pageCode, 'this-week', 'last sunday +1 day', 'now') }}
+    {{ menuTools.menu('menuStatisticsPreviousMonth'|trans, pageCode, 'previous-month', 'first day of previous month', 'last day of previous month') }}
+    {{ menuTools.menu('menuStatisticsThisYear'|trans, pageCode, 'this-year', 'first day of January this year', 'now') }}
+    <li data-page-code="custom" {{ menuTools.highlightActive(pageCode, 'custom') }}><a href="{{ path('statisticsCustom') }}">{{ 'menuStatisticsCustom'|trans }}</a></li>
+</ul>
+
+{% macro menu(name, pageCode, code, start, end) %}
+{% import _self as menuTools %}
+    <li data-page-code="{{ code }}" {{ menuTools.highlightActive(pageCode, code) }}><a href="{{ path('statisticsByDate', {'start': start|date(DATE_FORMAT_URL, 'Europe/Kiev'), 'end': end|date(DATE_FORMAT_URL) }) }}">{{ name }}</a></li>
+{% endmacro %}
+
+{% macro highlightActive(pageCode, code) %}
+    {% if code == pageCode %}class="active"{% endif %}
+{% endmacro %}

@@ -1,0 +1,29 @@
+{
+  "name" : "accountant.dev",
+  "require" : {
+    "php": ">=5.4.0",
+    "silex/silex" : "=v1.3.2",
+    "twig/twig" : "=v1.21.1",
+    "symfony/form" : "=v2.3.32",
+    "symfony/validator" : "=v2.3.32",
+    "symfony/config" : "=v2.3.32",
+    "symfony/security-csrf" : "=v2.7.0",
+    "symfony/translation" : "=v2.3.32",
+    "symfony/twig-bridge" : "=v2.3.32",
+    "symfony/doctrine-bridge" : "=v2.3.32",
+    "saxulum/saxulum-doctrine-orm-manager-registry-provider" : "=2.2.1",
+    "dflydev/doctrine-orm-service-provider" : "=v1.0.6",
+    "symfony/security" : "=v2.7.4",
+    "symfony/yaml" : "=v2.7.4",
+    "braincrafted/bootstrap-bundle" : "=v2.1.2"
+  },
+  "repositories" : [ {
+    "type" : "composer",
+    "url" : "https://packagist.org/"
+  } ],
+  "autoload" : {
+    "psr-4" : {
+      "Accountant\\" : "app/src/"
+    }
+  }
+}

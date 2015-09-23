@@ -1,0 +1,34 @@
+apply: 'Apply'
+actions: 'Actions'
+edit: 'Edit'
+delete: 'Delete'
+
+menuAddPayment: 'New Payment'
+menuCategories: 'Categories'
+menuLogout: 'Log out'
+
+menuStatisticsThisMonth: 'This Month'
+menuStatisticsToday: 'Today'
+menuStatisticsYesterday: 'Yesterday'
+menuStatisticsThisWeek: 'This Week'
+menuStatisticsPreviousMonth: 'Previous Month'
+menuStatisticsThisYear: 'This Year'
+menuStatisticsCustom: 'Custom'
+
+categoryIndexHeader: 'All Categories'
+categoryAddHeader: 'Add New Category'
+categoryEmptyList: 'Please add a category to start using the system'
+categoryAddBtn: 'Add New'
+categoryAdded: 'New category has been added successfully!'
+
+paymentAddHeader: 'Add New Payment'
+paymentColumnSum: 'Sum'
+paymentColumnDate: 'Date'
+paymentColumnComment: 'Comment'
+
+statisticsIndexHeader: 'All Categories'
+statisticsNoData: 'No payments have been found for the given date'
+statisticsCustomHeader: 'Custom Statistics Report'
+
+paymentPeriodStatus: 'Payments from %start% to %end%'
+paymentAdded: 'New payment has been added successfully!'

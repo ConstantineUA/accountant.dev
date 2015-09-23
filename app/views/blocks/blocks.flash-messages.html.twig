@@ -1,0 +1,16 @@
+{% import 'blocks.flash-messages.html.twig' as self %}
+
+{{ self.alerts(FLASH_MESSAGE_SUCCESS, 'success') }}
+{{ self.alerts(FLASH_MESSAGE_WARNING, 'warning') }}
+{{ self.alerts(FLASH_MESSAGE_ERROR, 'danger') }}
+
+
+{% macro alerts(key, status) %}
+{% set messages = app.session.flashbag.get(key) %}
+{% for message in messages %}
+    <div class="alert alert-{{ status }} fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{ message }}
+    </div>
+{% endfor %}
+{% endmacro %}

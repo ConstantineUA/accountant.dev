@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+{% block pageHeader %}{{ 'statisticsIndexHeader'|trans }} <small>{% include 'blocks.period.status.html.twig' %}</small>{% endblock %}
+
+{% block content %}
+
+<div class="spacer-25"></div>
+
+{% if categories %}
+
+<ul class="list-group">
+{% for category in categories %}
+    <li class="list-group-item">
+        <a href="{{ path('statisticsByCategory', {'id': category.id, 'start': start|date(DATE_FORMAT_URL), 'end': end|date(DATE_FORMAT_URL) }) }}">{{ category.name }}</a>
+        <span class="label label-info pull-right">{{ category.total }} UAH</span>
+    </li>
+{% endfor %}
+</ul>
+
+{% else %}
+<div class="alert alert-info" role="alert">
+    {{ 'statisticsNoData'|trans }}
+</div>
+{% endif %}
+
+{% endblock %}

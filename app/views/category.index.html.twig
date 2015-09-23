@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+{% block pageHeader %}{{ 'categoryIndexHeader'|trans }}{% endblock %}
+
+{% block content %}
+
+<a class="btn btn-info btn-md" href={{ url('categoryAdd') }}>
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    {{ 'categoryAddBtn'|trans }}
+</a>
+
+<div class="spacer"></div>
+
+{% if categories %}
+<ul class="list-group">
+    {% for category in categories %}
+    <li class="list-group-item">{{ category.getName }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<div class="alert alert-info" role="alert">
+    {{ 'categoryEmptyList'|trans }}
+</div>
+{% endif %}
+
+{% endblock %}
