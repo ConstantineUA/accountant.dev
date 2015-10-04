@@ -3,6 +3,7 @@
 {% block pageHeader %}{{ 'paymentAddHeader'|trans }}{% endblock %}
 
 {% block styles %}
+{{ parent() }}
 <link rel="stylesheet" href="/static/css/datepicker.css">
 {% endblock %}
 
@@ -13,6 +14,8 @@
 {% endblock %}
 
 {% block scripts %}
+{{ parent() }}
+
 <script src="/static/js/bootstrap-datepicker.js"></script>
 <script src="/static/js/accountant-datepicker.js"></script>
 <script>
