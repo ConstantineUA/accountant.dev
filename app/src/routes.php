@@ -4,6 +4,10 @@
 $app->get('/', 'accountant.controller.statistics:indexAction')
     ->bind('homepage');
 
+// User Controller
+$app->match('/login/', 'accountant.controller.user:loginAction')
+    ->bind('login');
+
 // Statistics Controller
 $app->get('/statistics/start/{start}/end/{end}/', 'accountant.controller.statistics:byCategoriesAction')
     ->convert('start', 'Accountant\Controller\AbstractController::convertUrlStartDate')

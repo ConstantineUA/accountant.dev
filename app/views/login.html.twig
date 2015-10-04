@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="col-sm-4 col-sm-push-4">
+        <h2 class="form-signin-heading">{{ 'loginHeader'|trans }}</h2>
+        {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+
+        {% form_theme form 'bootstrap.html.twig' %}
+        {{ form(form) }}
+    </div>
+</div>
+{% endblock %}
+

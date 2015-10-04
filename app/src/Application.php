@@ -130,6 +130,35 @@ class Application extends \Silex\Application {
         $this['accountant.controller.payment'] = $this->share(function() {
             return new Controller\PaymentController($this);
         });
+        $this['accountant.controller.user'] = $this->share(function() {
+            return new Controller\UserController($this);
+        });
+    }
+
+    /**
+     * Initialize built-in security sub-system to allow login/logout feature
+     */
+    protected function initSecurity()
+    {
+        $users = array(
+            $this['config']['security']['username'] => array(
+                'ROLE_ADMIN', $this['config']['security']['password']
+            )
+        );
+
+        $this->register(new Provider\SecurityServiceProvider(), array(
+            'security.firewalls' => array(
+                'login' => array(
+                    'anonymous' => true,
+                    'pattern' => '^/login/$',
+                ),
+                'secured' => array(
+                    'pattern' => '^/.*',
+                    'form' => array('login_path' => '/login/', 'check_path' => '/login_check/'),
+                    'users' => $users,
+                ),
+            )
+        ));
     }
 
     /**
@@ -183,6 +212,7 @@ class Application extends \Silex\Application {
         $this->initProviders();
         $this->initApplicationComponents();
         $this->initTwig();
+        $this->initSecurity();
 
         parent::boot();
     }

@@ -21,4 +21,9 @@ return array(
 
     'outputDateFormatGeneral' => 'M jS Y',
     'outputDateFormatShort' => 'M jS',
+
+    'security' => array(
+        'username' => 'constantine',
+        'password' => 'T0dI4UJ9dXkMXZKSUj1S66N66DpRbhkZuZDv+dWdEn30BVbiuAG6+KoGQXEglcgO52T5ikGUW+yBSq2eCxt/FA=='
+    )
 );
