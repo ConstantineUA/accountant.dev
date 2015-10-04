@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>accountant.dev</title>
+
+        <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-theme.min.css">
+        {% block styles %}{% endblock %}
+    </head>
+
+    <body>
+        {% block body %}{% endblock %}
+
+        <script src="/static/js/jquery/jquery-2.1.4.min.js"></script>
+        <script src="/static/js/jquery/jquery.cookie.js"></script>
+        {% block scripts %}{% endblock %}
+    </body>
+</html>
