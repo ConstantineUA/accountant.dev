@@ -1,7 +1,7 @@
 {
   "name" : "accountant.dev",
   "require" : {
-    "php": ">=5.4.0",
+    "php" : ">=5.4.0",
     "silex/silex" : "=v1.3.2",
     "twig/twig" : "=v1.21.1",
     "symfony/form" : "=v2.3.32",
@@ -15,7 +15,8 @@
     "dflydev/doctrine-orm-service-provider" : "=v1.0.6",
     "symfony/security" : "=v2.7.4",
     "symfony/yaml" : "=v2.7.4",
-    "braincrafted/bootstrap-bundle" : "=v2.1.2"
+    "braincrafted/bootstrap-bundle" : "=v2.1.2",
+    "monolog/monolog" : "=1.17.1"
   },
   "repositories" : [ {
     "type" : "composer",
