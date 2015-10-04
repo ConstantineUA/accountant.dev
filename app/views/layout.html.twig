@@ -1,34 +1,45 @@
-{% extends 'base.html.twig' %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block styles %}
-<link rel="stylesheet" href="/static/css/custom.css">
-{% endblock %}
+        <title>accountant.dev</title>
 
-{% block body %}
-{% include 'blocks.header.menu.html.twig' %}
+        <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="/static/css/custom.css">
+        {% block styles %}{% endblock %}
+    </head>
 
-<main class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-push-2">
-            <h2 class="page-header">{% block pageHeader %}{% endblock %}</h2>
+    <body>
+        {% include 'blocks.header.menu.html.twig' %}
 
-            {% include 'blocks.flash-messages.html.twig' %}
+        <main class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-sm-push-2">
+                    <h2 class="page-header">{% block pageHeader %}{% endblock %}</h2>
 
-            {% block content %}{% endblock %}
-        </div>
+                    {% include 'blocks.flash-messages.html.twig' %}
+
+                    {% block content %}{% endblock %}
+                </div>
 
 
-        <div class="col-xs-12 col-sm-2 col-sm-pull-10 sidebar">
-            {% include 'blocks.statistics.menu.html.twig' %}
-            <footer class="footer text-muted">
-                © 2015 [accountant.dev]. All&nbsp;rights&nbsp;reserved.
-            </footer>
-        </div>
-    </div>
+                <div class="col-xs-12 col-sm-2 col-sm-pull-10 sidebar">
+                    {% include 'blocks.statistics.menu.html.twig' %}
+                    <footer class="footer text-muted">
+                        © 2015 [accountant.dev]. All&nbsp;rights&nbsp;reserved.
+                    </footer>
+                </div>
+            </div>
 
-</main>
-{% endblock %}
+        </main>
 
- {% block scripts %}
- <script src="/static/js/global.js"></script>
- {% endblock %}
+        <script src="/static/js/jquery/jquery-2.1.4.min.js"></script>
+        <script src="/static/js/jquery/jquery.cookie.js"></script>
+        <script src="/static/js/global.js"></script>
+        {% block scripts %}{% endblock %}
+    </body>
+</html>
